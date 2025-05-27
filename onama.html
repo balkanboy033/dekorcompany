@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DekorCompany Priboj | O Nama</title>
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2a5f8b;
+            --secondary-color: #f8b400;
+            --dark-color: #222;
+            --light-color: #fff;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 15px 25px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #2a5f8b 0%, #1d4b6f 100%);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            padding-top: 80px;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* 3D Card Styles */
+        .card-3d {
+            position: relative;
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transform: perspective(1000px) rotateY(0deg);
+            transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            background: white;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .card-3d:hover {
+            transform: perspective(1000px) rotateY(5deg) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 120px 0;
+            background: var(--gradient-primary);
+            color: white;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/pattern.png') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Service Icons */
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 20px rgba(42, 95, 139, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .card-3d:hover .service-icon {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        /* Hover Effects */
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button Styles */
+        .btn-3d {
+            position: relative;
+            padding: 12px 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .btn-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .btn-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-3d:hover::before {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: #333;
+        }
+
+        /* Parallax Effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Glass Morphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Modern Spacing */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* ========== NAVIGACIJA ========== */
+        .navbar {
+            background-color: var(--light-color) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+        
+        .navbar-logo {
+            height: 60px;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled .navbar-logo {
+            height: 35px;
+        }
+        
+        .nav-item {
+            margin: 0 8px;
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            font-size: 14px !important;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 8px 12px !important;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        /* Animacija za linkove */
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+            transform-origin: left center;
+        }
+        
+        .nav-link:hover::before,
+        .nav-item.active .nav-link::before {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        .nav-item.active .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+        
+        /* Dugmici za socijalne mreže */
+        .icons-menu a {
+            color: var(--dark-color);
+            margin: 0 10px;
+            font-size: 16px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .icons-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            bottom: -4px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .icons-menu a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .icons-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Korpa ikonica */
+        .iconfont-wrapper {
+            position: relative;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--secondary-color);
+            color: var(--light-color);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .iconfont-wrapper:hover .cart-count {
+            transform: scale(1.1);
+        }
+        
+        /* ========== HAMBURGER MENI ========== */
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        
+        .hamburger {
+            width: 26px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: var(--dark-color);
+            border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) {
+            top: 0;
+            transform-origin: left center;
+        }
+        
+        .hamburger span:nth-child(2) {
+            top: 8px;
+            transform-origin: left center;
+        }
+        
+        .hamburger span:nth-child(3) {
+            top: 16px;
+            transform-origin: left center;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 0;
+            left: 4px;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
+            width: 0%;
+            opacity: 0;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 18px;
+            left: 4px;
+        }
+        
+        /* ========== MODAL ========== */
+        .modal-content {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .modal-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-close {
+            filter: invert(1);
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            padding: 8px 20px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+        
+        .btn-primary:hover {
+            background: #1d4b6f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .custom-outline-btn {
+            border: 2px solid #2a5f8b !important;
+            color: #2a5f8b !important;
+            background-color: transparent !important;
+        }
+        .custom-outline-btn:hover {
+            background-color: #2a5f8b !important;
+            color: white !important;
+        }
+        
+        .btn-outline-secondary {
+            transition: var(--transition);
+        }
+        
+        .btn-outline-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* ========== RESPONZIVNOST ========== */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--light-color);
+                padding: 20px;
+                margin-top: 15px;
+                border-radius: 8px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-item {
+                margin: 6px 0;
+            }
+            
+            .nav-link {
+                padding: 10px 0 !important;
+            }
+            
+            .nav-link::before {
+                bottom: 8px;
+            }
+            
+            .icons-menu {
+                margin-top: 15px;
+                justify-content: center;
+            }
+        }
+
+        /* 3D CART STYLES */
+        .cart-3d {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: perspective(1000px) rotateY(0deg);
+            transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .cart-3d:hover {
+            transform: perspective(1000px) rotateY(2deg);
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, #2a5f8b 0%, #1d4b6f 100%);
+        }
+
+        .cart-scroll-area {
+            max-height: 50vh;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-items-container {
+            min-height: 200px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #2a5f8b;
+        }
+
+        .cart-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            padding: 5px;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            color: #2a5f8b;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: #e9ecef;
+            transform: scale(1.1);
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #dc3545;
+            font-size: 1.3rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+
+        .remove-item:hover {
+            background: rgba(220, 53, 69, 0.1);
+            transform: rotate(90deg);
+        }
+
+        .empty-cart {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom scrollbar */
+        .cart-scroll-area::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .cart-scroll-area::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .cart-scroll-area::-webkit-scrollbar-thumb {
+            background: #2a5f8b;
+            border-radius: 10px;
+        }
+
+        .cart-scroll-area::-webkit-scrollbar-thumb:hover {
+            background: #1d4b6f;
+        }
+
+        /* Kontrole za količinu */
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            font-size: 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .quantity-btn:hover {
+            background-color: #ddd;
+        }
+
+        /* Uklanjanje proizvoda iz korpe */
+        .remove-item {
+            background-color: #f00;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .remove-item:hover {
+            background-color: #c00;
+        }
+
+        /* Footer - dugme za naručivanje */
+        .cart-footer {
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .cart-footer button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .cart-footer button:hover {
+            background: #e65c00;
+            transform: scale(1.05); /* Efekat povećanja pri hoveru */
+        }
+
+        /* Stil za animirani otvaranje/zatvaranje korpe */
+        #cart-container.open {
+            right: 0;
+        }
+
+        #notification-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .notification {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 320px;
+            transform: translateX(100%);
+            animation: slideIn 0.5s ease forwards, fadeOut 0.5s ease 3.5s forwards;
+            font-family: sans-serif;
+            perspective: 1000px;
+            border-left: 5px solid #4caf50;
+        }
+
+        .notification .checkmark {
+            font-size: 22px;
+            color: #4caf50;
+            flex-shrink: 0;
+        }
+
+        .notification img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .notification-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .notification-content strong {
+            font-size: 16px;
+        }
+
+        .notification-content span {
+            font-size: 14px;
+            color: #555;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateX(100%) rotateY(20deg);
+            }
+        }
+
+        /* Footer styles (unchanged as requested) */
+        .footer-section {
+            background-color: #333; 
+            color: #fff; 
+        }
+        
+        .footer-link {
+            color: #00aaff; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
+        .footer-link:hover {
+            text-decoration: underline; 
+        }
+
+        .section-padding {
+  padding: 80px 0;
+}
+.glass-box {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+.glass-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Input Icons */
+.icon-input {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: #0d6efd;
+  font-size: 1.2rem;
+}
+
+/* Modern Inputs */
+.modern-input {
+  padding-left: 2.5rem;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  background-color: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+.modern-label {
+  position: absolute;
+  top: 50%;
+  left: 2.5rem;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  background: white;
+  padding: 0 6px;
+  color: #6c757d;
+  pointer-events: none;
+}
+
+.modern-input:focus + .modern-label,
+.modern-input:not(:placeholder-shown) + .modern-label {
+  top: -0.6rem;
+  left: 2rem;
+  font-size: 0.8rem;
+  color: #0d6efd;
+}
+
+@media (max-width: 767px) {
+  /* Kontakt sekcija optimizacija */
+  .contact-section .glass-box {
+    padding: 20px !important;
+  }
+  
+  .contact-section .display-5 {
+    font-size: 1.8rem !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .contact-section .lead {
+    font-size: 1rem !important;
+  }
+  
+  /* Kontakt kartice */
+  .contact-item {
+    padding: 15px !important;
+    margin-bottom: 15px;
+  }
+  
+  .contact-item .icon-wrapper {
+    width: 50px !important;
+    height: 50px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .contact-item h4 {
+    font-size: 1.1rem !important;
+  }
+  
+  .contact-item p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Radno vreme optimizacija */
+  .working-hours {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 15px !important;
+  }
+  
+  .working-hours .icon-wrapper {
+    margin: 0 auto 10px !important;
+  }
+  
+  .working-hours-content h4 {
+    text-align: center !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .working-hours-content p {
+    margin-bottom: 3px !important;
+  }
+  
+  /* Mapa optimizacija */
+  .map-container {
+    height: 250px !important;
+    margin-top: 20px !important;
+  }
+  
+  /* Dodatni prostor između sekcija */
+  .section-padding {
+    padding: 50px 0 !important;
+  }
+}
+
+@media (max-width: 575px) {
+  /* Ekstra male ekrane */
+  .contact-section .display-5 {
+    font-size: 1.5rem !important;
+  }
+  
+  .contact-item {
+    padding: 12px !important;
+  }
+  
+  .map-container {
+    height: 200px !important;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Moderna navigacija -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="assets/images/logonobackground.png" alt="Dekor Company Logo" class="navbar-logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">POČETNA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="onama.html">O NAMA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proizvodi.html">PROIZVODNJA</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="kontakt.html">KONTAKT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galerija.html">GALERIJA</a>
+                    </li>
+                </ul>
+                
+                <div class="icons-menu">
+                    <a href="https://www.facebook.com/dekorcompany.priboj" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dekor_company/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="iconfont-wrapper" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInDown">Dekor Company</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInDown animate__delay-1s">Vodeći proizvođač boja i lakova sa više od 30 godina iskustva</p>
+                    <div class="d-flex gap-3 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="proizvodi.html" class="btn btn-3d btn-primary">
+                            <i class="fas fa-paint-roller me-2"></i> Naši Proizvodi
+                        </a>
+                        <a href="kontakt.html" class="btn btn-3d btn-secondary">
+                            <i class="fas fa-phone-alt me-2"></i> Kontaktirajte Nas
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="assets/images/10.png" alt="Paint Can" class="img-fluid floating" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card-3d p-5">
+                        <h2 class="section-title">O Nama</h2>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="pe-lg-4">
+                                    <p><strong>Dekor Company doo</strong> je vodeći proizvođač boja i lakova za drvo i metal, kao i stručni partner u ponudi građevinskih materijala za unutrašnje i spoljašnje prostore. Sa više od 30 godina iskustva, posvećeni smo pružanju vrhunskih proizvoda i usluga našim klijentima.</p>
+                                    <p><strong>Naša misija</strong> je unapređenje kvaliteta života kroz inovativna rešenja za zaštitu i dekoraciju drveta i metala. Fokusirani smo na trajnost i efikasnost, i stalno radimo na razvoju proizvoda koji ispunjavaju najviše standarde u industriji. Verujemo u održivost i odgovornost prema zajednici i životnoj sredini.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ps-lg-4">
+                                    <p><strong>Vizija Dekor Company doo</strong> je da postanemo prepoznati lideri u industriji boja i lakova, kao i pouzdani partneri u građevinskom sektoru. Naši proizvodi se izvoze i koriste širom regiona, što potvrđuje našu posvećenost kvalitetu i konkurentnosti na globalnom tržištu.</p>
+                                    <p><strong>Naš tim stručnjaka</strong> je tu da vam pruži sve potrebne savete i podršku. Sa posvećenošću i entuzijazmom, radimo zajedno sa našim klijentima kako bismo ostvarili njihove ciljeve i pružili im najbolje moguće iskustvo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Naše Usluge</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="h4">Boje za Drvo</h3>
+                            <p class="mb-0">Kvalitetne boje koje pružaju dugotrajnu zaštitu i atraktivan izgled vašim drvenim površinama.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-roller"></i>
+                            </div>
+                            <h3 class="h4">Boje za Metal</h3>
+                            <p class="mb-0">Boje koje osiguravaju otpornost na koroziju i dugotrajnu zaštitu metalnih površina.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="h4">Građevinski Materijali</h3>
+                            <p class="mb-0">Širok asortiman građevinskih materijala za sve vaše projekte i potrebe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Naši Proizvodi</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon" style="background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h3 class="h4">Razređivači</h3>
+                            <p class="mb-0">Naši razređivači omogućavaju savršenu konzistenciju za različite primene, sa odličnim performansama u svakom okruženju.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon" style="background: linear-gradient(135deg, #17a2b8 0%, #117a8b 100%);">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="h4">Impregnacije</h3>
+                            <p class="mb-0">Specijalne impregnacije za zaštitu i dugotrajnu očuvanost vaših površina, idealne za specifične potrebe.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon" style="background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="h4">Fasadne Boje</h3>
+                            <p class="mb-0">Inovativne fasadne boje koje pružaju dugotrajnu zaštitu i estetski privlačan izgled vašim građevinskim projektima.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="proizvodi.html" class="btn btn-3d btn-primary me-3">
+                    <i class="fas fa-eye me-2"></i> Pogledajte Proizvodnju
+                </a>
+                <a href="galerija.html" class="btn btn-3d btn-secondary">
+                    <i class="fas fa-images me-2"></i> Pogledajte Galeriju
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section section-padding text-dark" style="font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);">
+        <style>
+            :root {
+                --primary-color: #4361ee;
+                --primary-light: #e0e7ff;
+                --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            .glass-box {
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border-radius: 20px;
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                overflow: hidden;
+            }
+            
+            .glass-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            }
+            
+            .text-gradient-primary {
+                background: var(--gradient-primary);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                display: inline-block;
+            }
+            
+            .contact-item {
+                transition: all 0.3s ease;
+                padding: 20px;
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.6);
+                height: 100%;
+            }
+            
+            .contact-item:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 10px 20px rgba(67, 97, 238, 0.1);
+            }
+            
+            .icon-wrapper {
+                width: 60px;
+                height: 60px;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 15px;
+                transition: all 0.3s ease;
+            }
+            
+            .bg-primary-soft {
+                background-color: var(--primary-light);
+            }
+            
+            .contact-item:hover .icon-wrapper {
+                transform: scale(1.1);
+                background: var(--gradient-primary);
+            }
+            
+            .contact-item:hover .icon-wrapper i {
+                color: white !important;
+            }
+            
+            .map-container {
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+            
+            .map-container:hover {
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+            
+            .display-5 {
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+            
+            .lead {
+                font-size: 1.25rem;
+                font-weight: 300;
+            }
+            
+            /* Novi stil za radno vreme */
+            .working-hours-container {
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            .working-hours {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.6);
+                max-width: 500px;
+                margin: 0 auto;
+                transition: all 0.3s ease;
+            }
+            
+            .working-hours:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 10px 20px rgba(67, 97, 238, 0.1);
+            }
+            
+            .working-hours .icon-wrapper {
+                width: 50px;
+                height: 50px;
+                margin: 0 20px 0 0;
+                flex-shrink: 0;
+            }
+            
+            .working-hours-content h4 {
+                margin-bottom: 5px;
+                text-align: left;
+            }
+            
+            @media (max-width: 992px) {
+                .section-padding {
+                    padding: 60px 0;
+                }
+                
+                .display-5 {
+                    font-size: 2.2rem;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .section-padding {
+                    padding: 50px 0;
+                }
+                
+                .display-5 {
+                    font-size: 2rem;
+                }
+                
+                .lead {
+                    font-size: 1.1rem;
+                }
+                
+                .contact-item {
+                    padding: 15px;
+                }
+                
+                .icon-wrapper {
+                    width: 50px;
+                    height: 50px;
+                }
+                
+                .working-hours {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 15px;
+                }
+                
+                .working-hours .icon-wrapper {
+                    margin: 0 auto 10px;
+                }
+                
+                .working-hours-content h4 {
+                    text-align: center;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .section-padding {
+                    padding: 40px 0;
+                }
+                
+                .glass-box {
+                    padding: 25px !important;
+                }
+            }
+        </style>
+    
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="glass-box p-4 p-md-5">
+                        <div class="text-center mb-4 mb-md-5">
+                            <h2 class="fw-bold text-gradient-primary display-5 mb-3">Kontaktirajte Nas</h2>
+                            <p class="lead text-muted">Stojimo vam na raspolaganju za sva pitanja i saradnju</p>
+                        </div>
+                        
+                        <div class="row g-4 mb-4 mb-md-5">
+                            <div class="col-md-4">
+                                <div class="contact-item text-center">
+                                    <div class="icon-wrapper bg-primary-soft">
+                                        <i class="bi bi-geo-alt-fill text-primary fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-2">Adresa</h4>
+                                    <p class="text-muted mb-0">29. Oktobra bb<br>31331 Priboj, Srbija</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="contact-item text-center">
+                                    <div class="icon-wrapper bg-primary-soft">
+                                        <i class="bi bi-telephone-fill text-primary fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-2">Telefon</h4>
+                                    <p class="text-muted mb-0">+381 033 445723</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="contact-item text-center">
+                                    <div class="icon-wrapper bg-primary-soft">
+                                        <i class="bi bi-envelope-fill text-primary fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-2">Email</h4>
+                                    <p class="text-muted mb-0">office@dekorcompany.rs</p>    
+                                </div>                        
+                            </div>
+                        </div>
+                        
+                        <!-- Centrirano radno vreme -->
+                        <div class="working-hours-container">
+                            <div class="working-hours">
+                                <div class="icon-wrapper bg-primary-soft">
+                                    <i class="bi bi-clock-fill text-primary fs-4"></i>
+                                </div>
+                                <div class="working-hours-content">
+                                    <h4 class="fw-bold mb-1">Radno vreme</h4>
+                                    <p class="text-muted mb-0">Pon-Pet: 07-17h</p>
+                                    <p class="text-muted mb-0">Sub: 08-13h</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container mx-auto mt-5" style="height: 300px;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d270.7674681019773!2d19.545896863341344!3d43.55552174027859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssr!2srs!4v1672763038622!5m2!1ssr!2srs" 
+                                style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center" style="background-color: #343a40; color: #ffffff; padding: 40px;" id="image3-3v">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: left; position: relative;">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div style="flex-shrink: 0;">
+                    <img src="assets/images/logohq.png" alt="Dekor Company Logo" style="height: 80px; width: auto; max-width: 100%;">
+                </div>
+                <div style="flex-shrink: 0;">
+                    <a href="https://www.facebook.com/dekorcompany.priboj" target="_blank" style="color: #ffffff; background-color: #4267B2; border-radius: 50%; width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none;">
+                        <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dekor_company/" target="_blank" style="color: #ffffff; background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); border-radius: 50%; width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none;">
+                        <i class="fab fa-instagram" style="font-size: 18px;"></i>
+                    </a>
+                </div>
+            </div>
+    
+           
+            <div style="text-align: center; margin-bottom: 30px;">
+                <p style="font-weight: 700; margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: #f8f9fa; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    Potrebna Vam je pomoć?
+                </p>
+                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+                 
+                    <a href="kontakt.html" style="color: #ffffff; text-decoration: none;">
+                        <div style="background: linear-gradient(145deg, #495057, #343a40); 
+                                    padding: 15px 25px; 
+                                    border-radius: 10px; 
+                                    box-shadow: 5px 5px 15px rgba(0,0,0,0.3),
+                                               -2px -2px 10px rgba(255,255,255,0.05);
+                                    transition: all 0.3s ease;
+                                    transform-style: preserve-3d;
+                                    border: 1px solid rgba(255,255,255,0.1);"
+                             onmouseover="this.style.transform='translateY(-5px) scale(1.03)'; this.style.boxShadow='8px 8px 20px rgba(0,0,0,0.4), -3px -3px 12px rgba(255,255,255,0.08)'"
+                             onmouseout="this.style.transform=''; this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.3), -2px -2px 10px rgba(255,255,255,0.05)'">
+                            <i class="fas fa-envelope" style="font-size: 1.5rem; margin-bottom: 8px; display: block; color: #20c997;"></i>
+                            <span style="font-weight: 500;">Kontaktirajte nas</span>
+                        </div>
+                    </a>
+                    
+                    
+                    <a href="kako-kupovati.html" style="color: #ffffff; text-decoration: none;">
+                        <div style="background: linear-gradient(145deg, #495057, #343a40); 
+                                    padding: 15px 25px; 
+                                    border-radius: 10px; 
+                                    box-shadow: 5px 5px 15px rgba(0,0,0,0.3),
+                                               -2px -2px 10px rgba(255,255,255,0.05);
+                                    transition: all 0.3s ease;
+                                    transform-style: preserve-3d;
+                                    border: 1px solid rgba(255,255,255,0.1);"
+                             onmouseover="this.style.transform='translateY(-5px) scale(1.03)'; this.style.boxShadow='8px 8px 20px rgba(0,0,0,0.4), -3px -3px 12px rgba(255,255,255,0.08)'"
+                             onmouseout="this.style.transform=''; this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.3), -2px -2px 10px rgba(255,255,255,0.05)'">
+                            <i class="fas fa-shopping-cart" style="font-size: 1.5rem; margin-bottom: 8px; display: block; color: #20c997;"></i>
+                            <span style="font-weight: 500;">Kako kupovati</span>
+                        </div>
+                    </a>
+                    
+                   
+                    <a href="cesta-pitanja.html" style="color: #ffffff; text-decoration: none;">
+                        <div style="background: linear-gradient(145deg, #495057, #343a40); 
+                                    padding: 15px 25px; 
+                                    border-radius: 10px; 
+                                    box-shadow: 5px 5px 15px rgba(0,0,0,0.3),
+                                               -2px -2px 10px rgba(255,255,255,0.05);
+                                    transition: all 0.3s ease;
+                                    transform-style: preserve-3d;
+                                    border: 1px solid rgba(255,255,255,0.1);"
+                             onmouseover="this.style.transform='translateY(-5px) scale(1.03)'; this.style.boxShadow='8px 8px 20px rgba(0,0,0,0.4), -3px -3px 12px rgba(255,255,255,0.08)'"
+                             onmouseout="this.style.transform=''; this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.3), -2px -2px 10px rgba(255,255,255,0.05)'">
+                            <i class="fas fa-question-circle" style="font-size: 1.5rem; margin-bottom: 8px; display: block; color: #20c997;"></i>
+                            <span style="font-weight: 500;">Česta pitanja</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+      
+            <p style="font-size: 18px; font-weight: bold; text-align: center; padding-top: 10px;">© 2025 Dekor Company doo</p>
+            <p style="text-align: center;">Design and development by <span class="designer-name">Luka Petrović</span></p>
+            <hr style="border-color: #555; margin: 15px 0;">
+              
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <p><i class="fas fa-id-card"></i> <strong>PIB:</strong> 109621452</p>
+                    <p><i class="fas fa-briefcase"></i> <strong>MB:</strong> 21212229</p>
+                    <p><i class="fas fa-calendar-alt"></i> <strong>Datum osnivanja:</strong> 18.7.2016.</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <p><i class="fas fa-phone-alt"></i> <strong>Telefon:</strong> +381 033 445723</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:office@dekorcompany.rs" style="color: #ffffff; text-decoration: none;">office@dekorcompany.rs</a></p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Adresa:</strong></p>
+                    <p>29. Oktobra bb</p>
+                    <p>31331 Priboj, Srbija</p>
+                </div>
+            </div>
+              
+            <hr style="border-color: #555; margin: 20px 0;">
+              
+            
+            <div style="text-align: center; margin: 20px auto; max-width: 800px;">
+                <p style="margin-bottom: 15px; font-weight: bold;">Prihvatamo sledeće načine plaćanja:</p>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; align-items: center;">
+                    <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="creditcard/visa.png" alt="Visa" style="height: 30px; width: auto;">
+                    </div>
+                    <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="creditcard/logo-visa-secure.png" alt="Visa Secure" style="height: 30px; width: auto;">
+                    </div>
+                    <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="creditcard/mastercard.png" alt="Mastercard" style="height: 30px; width: auto;">
+                    </div>
+                    <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="creditcard/mastercard-id-check.png" alt="Mastercard ID Check" style="height: 30px; width: auto;">
+                    </div>
+                    <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="creditcard/maestro.png" alt="Maestro" style="height: 30px; width: auto;">
+                    </div>
+                    <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="creditcard/ips.png" alt="IPS" style="height: 30px; width: auto;">
+                    </div>
+                    <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="creditcard/dinacard.png" alt="DinaCard" style="height: 30px; width: auto;">
+                    </div>
+                </div>
+            </div>
+              
+            <p style="text-align: center; margin-top: 15px;">Sva prava zadržana.</p>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Highlight active page
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.parentElement.classList.add('active');
+      }
+    });
+    
+    // Scroll effect for navbar
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        document.querySelector('.navbar').classList.add('scrolled');
+      } else {
+        document.querySelector('.navbar').classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scroll for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+</section><script class="cid-uithpB1lg5" id="image3-3v" data-rv-view="1254">
+
+
+function showTab(tabId) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            if (tab.id === tabId) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        const buttons = document.querySelectorAll('.tab-button');
+        buttons.forEach(button => {
+            if (button.getAttribute('onclick').includes(tabId)) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+
+    
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    updateCart();
+
+// Pozovi funkciju za ažuriranje prikaza korpe odmah nakon učitavanja stranice
+
+
+// Toggle za korpu
+function toggleCart() {
+    let cartContainer = document.getElementById("cart-container");
+    cartContainer.style.right = cartContainer.style.right === "0px" ? "-350px" : "0px";
+}
+
+// Funkcija za ažuriranje korpe
+function updateCart() {
+    let cartItems = document.getElementById("cart-items");
+    let cartCount = document.querySelector(".cart-count");
+    let cartTotal = document.getElementById("cart-total");
+
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    if(cart.length === 0) {
+        cartItems.innerHTML = `
+            <div class="empty-cart text-center py-5">
+                <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+                <h5 class="text-muted">Vaša korpa je prazna</h5>
+                <p class="text-muted">Dodajte proizvode da počnete kupovinu</p>
+            </div>
+        `;
+    } else {
+        cart.forEach((item, index) => {
+            let itemDiv = document.createElement("div");
+            itemDiv.classList.add("cart-item");
+            total += item.price * item.quantity;
+
+            itemDiv.innerHTML = `
+                <img src="${item.imageUrl}" alt="${item.name}">
+                <div class="cart-item-details">
+                    <div class="cart-item-title">${item.name}</div>
+                    <div class="cart-item-price">${item.price} RSD</div>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                    <span class="mx-2 fw-bold">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                </div>
+                <button class="remove-item" onclick="removeFromCart(${index})">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            cartItems.appendChild(itemDiv);
+        });
+    }
+
+    cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+    cartTotal.textContent = `${total.toFixed(2)} RSD`;
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+
+// Funkcija za ažuriranje količine proizvoda u korpi
+function updateQuantity(index, change) {
+    // Proveri da li je nova količina manja od 1, ako jeste, ne dozvoljavaj to
+    if (cart[index].quantity + change <= 0) {
+        return;
+    }
+
+    // Ažuriraj količinu proizvoda u korpi
+    cart[index].quantity += change;
+    
+    // Pozovi funkciju za ažuriranje prikaza korpe
+    updateCart();
+}
+
+// Funkcija za uklanjanje proizvoda iz korpe
+function removeFromCart(index) {
+    cart.splice(index, 1); // Ukloni proizvod iz korpe
+    updateCart(); // Ažuriraj prikaz korpe
+}
+
+
+
+function addToCart(product) {
+    // Proveri da li proizvod već postoji u korpi
+    let existingProduct = cart.find(item => item.name === product.name);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;  // Povećaj količinu ako proizvod već postoji
+    } else {
+        product.quantity = 1;  // Ako ne postoji, dodaj proizvod sa količinom 1
+        cart.push(product);
+    }
+    
+    // Spremi ažuriranu korpu u localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    
+    // Ažuriraj prikaz korpe
+    updateCart();
+}
+
+
+// Funkcija za promenu količine proizvoda u korpi
+function updateQuantity(index, change) {
+    let item = cart[index];
+    item.quantity += change;
+
+    // Ako količina postane manja od 1, uklanjamo proizvod
+    if (item.quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
+// Funkcija za uklanjanje proizvoda iz korpe
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Poziva se kada korisnik pritisne "Naruči"
+function placeOrder() {
+    if (cart.length === 0) {
+        alert("Korpa je prazna!");
+        return;
+    }
+
+    window.location.href = "checkout.html"; // Preusmeravanje na checkout stranicu
+}
+
+// Početno učitavanje korpe
+updateCart();
+
+// Kada se stranica učita, ažuriraj korpu
+document.addEventListener("DOMContentLoaded", updateCart);
+
+
+</script>
+      
+      <!-- Dodatna JavaScript interaktivnost -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.contact-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      }
+      
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+      });
+    });
+    </script>
+  
+

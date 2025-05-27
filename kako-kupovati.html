@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uputstvo za naručivanje</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .date {
+      font-style: italic;
+      color: #7f8c8d;
+      margin-bottom: 30px;
+      display: inline-block;
+      padding: 5px 10px;
+      background: var(--light);
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .image {
+      margin: 30px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .image img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .image:hover img {
+      transform: scale(1.03);
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      color: #34495e;
+    }
+
+    .highlight-box {
+      background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+      border-left: 4px solid var(--secondary);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .highlight-box:hover {
+      transform: translateX(5px);
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    }
+
+    strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    .video-link {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(145deg, #2c3e50, #34495e);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      background: linear-gradient(145deg, #e74c3c, #c0392b);
+    }
+
+    .video-link i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 15px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+
+    .payment-method {
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .payment-method:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+
+    .payment-method i {
+      color: var(--secondary);
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+
+
+/* Premium Newsletter Section */
+.newsletter-premium {
+    padding: 3rem 0;
+    background-color: #f5f7fa;
+}
+
+.newsletter-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    border: 1px solid #e1e5eb;
+}
+
+.newsletter-icon {
+    flex: 0 0 80px;
+    height: 80px;
+    background: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.newsletter-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.newsletter-body {
+    flex: 1;
+}
+
+.newsletter-body h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+}
+
+.newsletter-body p {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.newsletter-form .input-group {
+    max-width: 500px;
+    display: flex;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form .input-group:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    border: none;
+    font-size: 1rem;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+}
+
+.newsletter-form button {
+    width: 60px;
+    background: #007bff;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.newsletter-form button:hover {
+    background: #0069d9;
+}
+
+.newsletter-form button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.terms-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-left: 0.25rem;
+}
+
+.terms-group input {
+    margin-right: 0.75rem;
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff;
+}
+
+.terms-group label {
+    font-size: 0.85rem;
+    color: #4a5568;
+    line-height: 1.4;
+}
+
+.terms-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+.disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+.disclaimer svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #a0aec0;
+    margin-top: 0.1rem;
+}
+
+.confirmation-message {
+    display: none;
+    background: #f0f9ff;
+    border: 1px solid #b6e0fe;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.confirmation-message svg {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    color: #007bff;
+}
+
+.confirmation-message h4 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+}
+
+.confirmation-message p {
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .newsletter-card {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .newsletter-icon {
+        margin-bottom: 1.5rem;
+    }
+    
+    .newsletter-form .input-group {
+        max-width: 100%;
+    }
+    
+    .terms-group {
+        justify-content: center;
+    }
+    
+    .disclaimer {
+        justify-content: center;
+        text-align: left;
+    }
+    
+    .confirmation-message {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+  </style>
+
+
+
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Uputstvo za naručivanje</h1>
+    <div class="date">Datum objave: 22.4.2025.</div>
+
+    <div class="image">
+      <img src="assets/images/backgroundpayment.jpg" alt="Uputstvo slika">
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        Kupovina u DekorCompany online prodavnici je <strong>jednostavna, bezbedna i prilagođena vašim potrebama</strong>.
+        Pre svega, omogućavamo plaćanje pouzećem, tako da možete platiti robu tek po njenom preuzimanju – brzo, lako i bez rizika.
+      </p>
+    </div>
+
+    <div class="payment-methods">
+      <div class="payment-method">
+        <i class="fas fa-money-bill-wave"></i>
+        <span>Plaćanje pouzećem</span>
+      </div>
+      <div class="payment-method">
+        <i class="far fa-credit-card"></i>
+        <span>Online plaćanje karticom</span>
+      </div>
+    </div>
+
+    <p>
+      Naša moderna i pregledna internet prodavnica olakšava pronalaženje željenih proizvoda. Bilo da znate tačno šta tražite ili samo istražujete ponudu, uz intuitivan sistem navigacije brzo ćete stići do cilja.
+    </p>
+
+    <div class="highlight-box">
+      <p>
+        Kada se odlučite za online plaćanje, ceo proces se obavlja preko sigurnog bankarskog sistema, koji garantuje zaštitu vaših podataka.
+        Informacije sa vaše platne kartice se ni u jednom trenutku ne čuvaju na DekorCompany sajtu.
+      </p>
+    </div>
+
+    <p>
+      Ako vam je draže da porudžbinu obavite putem telefona, naš tim vam je na raspolaganju.
+      Pozovite nas na <strong>033/44-57-23</strong>, bez obzira da li kupujete kao fizičko lice, pravno lice ili preduzetnik.
+    </p>
+
+    <p>
+      Pogledajte video-uputstvo za kupovinu na našem sajtu i uživajte u prednostima online kupovine.
+    </p>
+
+    <a href="https://www.youtube.com/watch?v=7L7AiE3cV88" target="_blank" class="video-link">
+      <i class="fab fa-youtube"></i>
+      <span>Pogledajte video uputstvo</span>
+    </a>
+  </div>
+
+
+  <section class="newsletter-premium">
+    <div class="container">
+        <div class="newsletter-card">
+            <div class="newsletter-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 5H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 12H5V7h14v10z"/>
+                    <path d="M7 15h10v2H7zM7 11h5v2H7zM7 7h10v2H7z"/>
+                </svg>
+            </div>
+            <div class="newsletter-body">
+                <h3>Pretplatite se za novosti</h3>
+                <p>Primajte ekskluzivne ponude, najnovije proizvode i stručne savete direktno u vaš inbox</p>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" id="emailInput" placeholder="Unesite email adresu" required>
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="terms-container">
+                        <div class="terms-checkbox-wrapper">
+                          <input type="checkbox" id="termsCheckbox" required class="custom-checkbox">
+                          <label for="termsCheckbox" class="terms-label">
+                            Prihvatam 
+                            <a href="#" class="terms-link">uslove korišćenja</a> i 
+                            <a href="#" class="terms-link">politiku privatnosti</a>
+                          </label>
+                        </div>
+                      </div>
+                    
+                    <div class="disclaimer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        <span>Vaša email adresa je sigurna sa nama. Možete se odjaviti u bilo kom trenutku.</span>
+                    </div>
+                </form>
+                
+                <div id="confirmationMessage" class="confirmation-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <div>
+                        <h4>Uspešna prijava!</h4>
+                        <p>Hvala što ste se pretplatili. Potvrdni email je poslat na vašu adresu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
+
+

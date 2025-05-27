@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEKORLES | Lak Za Čamce</title>
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  
+  
+  
+</head>
+<body>
+  
+  <section data-bs-version="5.1" class="menu menu2 cid-uiilrVuz3G" once="menu" id="menu2-30">
+    
+    <!-- Moderna navigacija -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">
+        <img src="assets/images/logonobackground.png" alt="Dekor Company Logo" class="navbar-logo">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">POČETNA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="onama.html">O NAMA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="proizvodi.html">PROIZVODNJA</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="kontakt.html">KONTAKT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="galerija.html">GALERIJA</a>
+          </li>
+        </ul>
+        
+        <div class="icons-menu">
+          <a href="https://www.facebook.com/dekorcompany.priboj" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/dekor_company/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="iconfont-wrapper" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- Shopping Cart Modal -->
+ <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content cart-3d">
+            <div class="modal-header bg-gradient">
+                <h5 class="modal-title text-white"><i class="fas fa-shopping-bag me-2"></i> VAŠA KORPA</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="cart-scroll-area">
+                    <div id="cart-items" class="cart-items-container">
+                        <!-- Empty state -->
+                        <div class="empty-cart text-center py-5">
+                            <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+                            <h5 class="text-muted">Vaša korpa je prazna</h5>
+                            <p class="text-muted">Dodajte proizvode da počnete kupovinu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-light">
+                <div class="w-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-uppercase text-muted">Ukupno:</span>
+                        <span id="cart-total" class="fw-bold fs-4 text-primary">0 RSD</span>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg rounded-pill shadow" onclick="placeOrder()">
+                            <i class="fas fa-credit-card me-2"></i> NARUČI
+                        </button>
+                        <button class="btn custom-outline-btn rounded-pill" data-bs-dismiss="modal">
+                            <i class="fas fa-arrow-left me-2"></i> NASTAVI KUPOVINU
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<meta charset="UTF-8" class="cid-uita6dGZWw" id="image3-3l" data-rv-view="420"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uita6dGZWw" id="image3-3l" data-rv-view="420"><title class="cid-uita6dGZWw" id="image3-3l" data-rv-view="420">Product Page</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" class="cid-uita6dGZWw" id="image3-3l" data-rv-view="420"><style class="cid-uita6dGZWw" id="image3-3l" data-rv-view="420">
+   
+   .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.cart-item span {
+    flex-grow: 1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.quantity-btn {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+    :root {
+      --primary-color: #2a5f8b;
+      --secondary-color: #f8b400;
+      --dark-color: #222;
+      --light-color: #fff;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      padding-top: 80px;
+      overflow-x: hidden;
+    }
+    
+    /* ========== NAVIGACIJA ========== */
+    .navbar {
+      background-color: var(--light-color) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      transition: var(--transition);
+    }
+    
+    .navbar.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    }
+    
+    .navbar-logo {
+      height: 60px;
+      transition: var(--transition);
+    }
+    
+    .navbar.scrolled .navbar-logo {
+      height: 35px;
+    }
+    
+    .nav-item {
+      margin: 0 8px;
+      position: relative;
+    }
+    
+    .nav-link {
+      color: var(--dark-color) !important;
+      font-weight: 500;
+      font-size: 14px !important;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 8px 12px !important;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    /* Animacija za linkove */
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: 0;
+      transition: var(--transition);
+      transform-origin: left center;
+    }
+    
+    .nav-link:hover::before,
+    .nav-item.active .nav-link::before {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+      transform: translateY(-2px);
+    }
+    
+    .nav-item.active .nav-link {
+      color: var(--primary-color) !important;
+      font-weight: 600;
+    }
+    
+    /* Dugmici za socijalne mreže */
+    .icons-menu a {
+      color: var(--dark-color);
+      margin: 0 10px;
+      font-size: 16px;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .icons-menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: currentColor;
+      bottom: -4px;
+      left: 0;
+      transition: var(--transition);
+    }
+    
+    .icons-menu a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .icons-menu a:hover::after {
+      width: 100%;
+    }
+    
+    /* Korpa ikonica */
+    .iconfont-wrapper {
+      position: relative;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--secondary-color);
+      color: var(--light-color);
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .iconfont-wrapper:hover .cart-count {
+      transform: scale(1.1);
+    }
+    
+    /* ========== HAMBURGER MENI ========== */
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    
+    .hamburger {
+      width: 26px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .hamburger span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: var(--dark-color);
+      border-radius: 2px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+    
+    .hamburger span:nth-child(1) {
+      top: 0;
+      transform-origin: left center;
+    }
+    
+    .hamburger span:nth-child(2) {
+      top: 8px;
+      transform-origin: left center;
+    }
+    
+    .hamburger span:nth-child(3) {
+      top: 16px;
+      transform-origin: left center;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 0;
+      left: 4px;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
+      width: 0%;
+      opacity: 0;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 18px;
+      left: 4px;
+    }
+    
+    /* ========== MODAL ========== */
+    .modal-content {
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .modal-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .btn-close {
+      filter: invert(1);
+    }
+    
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      padding: 8px 20px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+    }
+    
+    .btn-primary:hover {
+      background: #1d4b6f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .custom-outline-btn {
+        border: 2px solid #2a5f8b !important;
+        color: #2a5f8b !important;
+        background-color: transparent !important;
+    }
+    .custom-outline-btn:hover {
+        background-color: #2a5f8b !important;
+        color: white !important;
+    }
+    
+    .btn-outline-secondary {
+      transition: var(--transition);
+    }
+    
+    .btn-outline-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* ========== RESPONZIVNOST ========== */
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        background: var(--light-color);
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-item {
+        margin: 6px 0;
+      }
+      
+      .nav-link {
+        padding: 10px 0 !important;
+      }
+      
+      .nav-link::before {
+        bottom: 8px;
+      }
+      
+      .icons-menu {
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+   
+   .product-section {
+        margin-top: 80px;
+        padding: 20px;
+    }
+
+    .heading-section {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 20px;
+        background: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .section-heading:hover {
+        color: #007bff;
+    }
+
+    .section-subheading {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .product-image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .product-image-container:hover {
+        transform: scale(1.05);
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease;
+    }
+
+    .product-image-container:hover .product-image {
+        opacity: 0.8;
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .product-image-container:hover .image-overlay {
+        opacity: 1;
+    }
+
+    .product-details-card {
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .product-details-card:hover {
+        transform: scale(1.03);
+    }
+
+    .product-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .availability-rating {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .availability {
+        font-size: 1rem;
+        color: #28a745;
+        display: flex;
+        align-items: center;
+    }
+
+    .availability i {
+        color: #28a745;
+        margin-right: 5px;
+    }
+
+    .rating {
+        display: flex;
+        font-size: 1.2rem;
+        color: #ffd700;
+    }
+
+    .rating i {
+        margin-right: 3px;
+    }
+
+    .tab-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        background: #007bff;
+        margin: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .tab-button.active, .tab-button:hover {
+        background: #0056b3;
+    }
+
+    .tab-content {
+        display: none;
+        margin-top: 20px;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    .buttons {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+        margin: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-tech-list {
+        background: #28a745;
+    }
+
+    .btn-tech-list:hover {
+        background: #218838;
+    }
+
+    .btn-warning {
+        background: #ffc107;
+    }
+
+    .btn-warning:hover {
+        background: #e0a800;
+    }
+
+    .btn-order {
+        background: #007bff;
+    }
+
+    .btn-order:hover {
+        background: #0056b3;
+    }
+
+    .btn i {
+        margin-right: 5px;
+    }
+
+     /* 3D CART STYLES */
+.cart-3d {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: perspective(1000px) rotateY(0deg);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.cart-3d:hover {
+    transform: perspective(1000px) rotateY(2deg);
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #2a5f8b 0%, #1d4b6f 100%);
+}
+
+.cart-scroll-area {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.cart-items-container {
+    min-height: 200px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid #2a5f8b;
+}
+
+.cart-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    padding: 5px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.cart-item-price {
+    font-weight: 700;
+    color: #2a5f8b;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #e9ecef;
+    transform: scale(1.1);
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.remove-item:hover {
+    background: rgba(220, 53, 69, 0.1);
+    transform: rotate(90deg);
+}
+
+.empty-cart {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+.cart-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cart-scroll-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.cart-scroll-area::-webkit-scrollbar-thumb {
+    background: #2a5f8b;
+    border-radius: 10px;
+}
+
+.cart-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #1d4b6f;
+}
+
+/* Kontrole za količinu */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd;
+}
+
+/* Uklanjanje proizvoda iz korpe */
+.remove-item {
+    background-color: #f00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.remove-item:hover {
+    background-color: #c00;
+}
+
+/* Footer - dugme za naručivanje */
+.cart-footer {
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.cart-footer button {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.cart-footer button:hover {
+    background: #e65c00;
+    transform: scale(1.05); /* Efekat povećanja pri hoveru */
+}
+
+/* Stil za animirani otvaranje/zatvaranje korpe */
+#cart-container.open {
+    right: 0;
+}
+
+#notification-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .notification {
+        background: white;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        min-width: 320px;
+        transform: translateX(100%);
+        animation: slideIn 0.5s ease forwards, fadeOut 0.5s ease 3.5s forwards;
+        font-family: sans-serif;
+        perspective: 1000px;
+        border-left: 5px solid #4caf50;
+    }
+
+    .notification .checkmark {
+        font-size: 22px;
+        color: #4caf50;
+        flex-shrink: 0;
+    }
+
+    .notification img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .notification-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .notification-content strong {
+        font-size: 16px;
+    }
+
+    .notification-content span {
+        font-size: 14px;
+        color: #555;
+    }
+
+    @keyframes slideIn {
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        to {
+            opacity: 0;
+            transform: translateX(100%) rotateY(20deg);
+        }
+    }
+
+</style><section data-bs-version="5.1" class="product-section cid-uita6dGZWw" id="image3-3l">
+   
+    <div class="heading-section">
+        <h2 class="section-heading">Dekor Company PRIBOJ</h2>
+        <p class="section-subheading"></p>
+    </div>
+   
+    <div class="product-section">
+        <div class="row">
+            <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                <div class="product-image-container">
+                    <img src="assets/images/8.png" alt="Product Image" class="product-image">
+                    <div class="image-overlay">
+                        <span class="overlay-text">Featured Product</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product-details-card">
+                    
+                    <h3 class="product-title">DEKORLES Lak Za Čamce</h3>
+                   
+                    <div class="availability-rating">
+                        <span class="availability"><i class="fa fa-check-circle"></i> Na Stanju</span>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info-tabs">
+                        <button class="tab-button active" onclick="showTab('opis')">Opis</button>
+                        <button class="tab-button" onclick="showTab('pakovanje')">Pakovanje</button>
+                        <button class="tab-button" onclick="showTab('cena')">Cena</button>
+                        <button class="tab-button" onclick="showTab('primena')">Područje Primene</button>
+                        <button class="tab-button" onclick="showTab('nacin')">Način Primene</button>
+                    </div>
+                  
+                    <div class="tab-content" id="opis">
+                        <h3>Opis</h3>
+                        <p><strong>DEKORLES LAK ZA ČAMCE</strong> se lako nanosi, pogodan je za zaštitu i dekoraciju spoljašnjih i unutrašnjih drvenih površina čamaca, lamperije, brodskog poda. Suši se na vazduhu i pruža odličnu zaštitu od vlage i atmosferskih uticaja. Drvetu daje visoki sjaj i ističe njegovu prirodnu strukturu. Potrošnja je 8-10 m²/l za jedan sloj, u zavisnosti od vrste i poroznosti drveta.</p>
+                    </div>
+                    <div class="tab-content" id="pakovanje">
+                        <h3>Pakovanje</h3>
+                        <ul>
+                            <li>0,75 l</li>
+                            <li>2,50 l</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="cena">
+                        <h3>Cena RSD/KOM</h3>
+                        <ul>
+                            <li>498,00 RSD (0,75 l)</li>
+                            <li>1.584,00 RSD (2,50 l)</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="primena">
+                        <h3>Područje Primene</h3>
+                        <p>DEKORLES LAK ZA ČAMCE se lako nanosi i pogodna je za zaštitu i dekoraciju spoljašnjih i unutrašnjih drvenih površina čamaca, lamperije i brodskog poda. Suši se na vazduhu i pruža odličnu zaštitu od vlage i atmosferskih uticaja. Drvetu daje visoki sjaj i ističe njegovu prirodnu strukturu.</p>
+                    </div>
+                    <div class="tab-content" id="nacin">
+                        <h3>Način Primene</h3>
+                        <p>Da bi se obezbedilo dobro prijanjanje između premaza i površine, podloga mora biti čista, suva i svi ostaci stare boje moraju biti uklonjeni. Nanosi se nerazređen četkom ili valjkom, u 2-3 sloja. Nakon nanošenja prvog sloja, poželjno je lagano brušenje. Sušenje između slojeva treba da bude najmanje 24 sata.</p>
+                    </div>
+
+                     <!-- Izbor količine -->
+                     <div class="quantity-selection">
+                        <h3>Izaberite količinu:</h3>
+                        <label>
+                            <input type="radio" name="quantity" value="0.75" data-price="498"> 0,75 L
+                        </label>
+                        <label>
+                            <input type="radio" name="quantity" value="25" data-price="1584"> 2,5 L
+                        </label>
+                    </div>
+                    
+                    <!-- Dugme za dodavanje u korpu -->
+                    <button class="btn btn-order" id="addToCartBtn" disabled>
+                        <i class="fa fa-shopping-cart"></i> Dodaj U Korpu
+                    </button>
+
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const quantityRadios = document.querySelectorAll('input[name="quantity"]');
+                            const addToCartBtn = document.getElementById('addToCartBtn');
+                            const orderSound = document.getElementById('orderSound');
+                    
+                            quantityRadios.forEach(radio => {
+                                radio.addEventListener("change", function () {
+                                    addToCartBtn.disabled = false;
+                    
+                                    const selectedPrice = this.getAttribute("data-price");
+                                    const selectedQuantity = this.value;
+                    
+                                    addToCartBtn.onclick = function () {
+                                        const product = {
+                                            name: `DEKORLES LAK ZA ČAMCE (${selectedQuantity} L)`,
+                                            price: selectedPrice,
+                                            imageUrl: 'https://dekorcompany.rs/assets/images/8.png'
+                                        };
+                    
+                                        addToCart(product);
+                                        showNotification(product);
+                                        playSound();
+                                    };
+                                });
+                            });
+                        });
+                    
+                        function addToCart(product) {
+                            console.log(`Dodat u korpu: ${product.name} - Cena: ${product.price} RSD`);
+                        }
+                    
+                        function showNotification(product) {
+                            const container = document.getElementById('notification-container');
+                    
+                            const notification = document.createElement('div');
+                            notification.className = 'notification';
+                    
+                            notification.innerHTML = `
+                                <div class="checkmark">✅</div>
+                                <img src="${product.imageUrl}" alt="${product.name}" />
+                                <div class="notification-content">
+                                    <strong>${product.name}</strong>
+                                    <span>Cena: ${product.price} RSD</span>
+                                </div>
+                            `;
+                    
+                            container.appendChild(notification);
+                    
+                            setTimeout(() => {
+                                notification.remove();
+                            }, 4000);
+                        }
+                    
+                        function playSound() {
+                            const sound = document.getElementById('orderSound');
+                            sound.currentTime = 0;
+                            sound.play();
+                        }
+                    </script>
+   
+    <a href="PDF/4.DekorleslakzačamceTDS.pdf" class="btn btn-tech-list"><i class="fa fa-file-alt"></i>   Tehnička Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></section>
+<footer class="text-center" style="background-color: #343a40; color: #ffffff; padding: 40px;" id="image3-3v">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: left; position: relative;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div style="flex-shrink: 0;">
+                <img src="assets/images/logohq.png" alt="Dekor Company Logo" style="height: 80px; width: auto; max-width: 100%;">
+            </div>
+            <div style="flex-shrink: 0;">
+                <a href="https://www.facebook.com/dekorcompany.priboj" target="_blank" style="color: #ffffff; background-color: #4267B2; border-radius: 50%; width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none;">
+                    <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
+                </a>
+                <a href="https://www.instagram.com/dekor_company/" target="_blank" style="color: #ffffff; background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); border-radius: 50%; width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none;">
+                    <i class="fab fa-instagram" style="font-size: 18px;"></i>
+                </a>
+            </div>
+        </div>
+
+       
+        <div style="text-align: center; margin-bottom: 30px;">
+            <p style="font-weight: 700; margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: #f8f9fa; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                Potrebna Vam je pomoć?
+            </p>
+            <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+             
+                <a href="kontakt.html" style="color: #ffffff; text-decoration: none;">
+                    <div style="background: linear-gradient(145deg, #495057, #343a40); 
+                                padding: 15px 25px; 
+                                border-radius: 10px; 
+                                box-shadow: 5px 5px 15px rgba(0,0,0,0.3),
+                                           -2px -2px 10px rgba(255,255,255,0.05);
+                                transition: all 0.3s ease;
+                                transform-style: preserve-3d;
+                                border: 1px solid rgba(255,255,255,0.1);"
+                         onmouseover="this.style.transform='translateY(-5px) scale(1.03)'; this.style.boxShadow='8px 8px 20px rgba(0,0,0,0.4), -3px -3px 12px rgba(255,255,255,0.08)'"
+                         onmouseout="this.style.transform=''; this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.3), -2px -2px 10px rgba(255,255,255,0.05)'">
+                        <i class="fas fa-envelope" style="font-size: 1.5rem; margin-bottom: 8px; display: block; color: #20c997;"></i>
+                        <span style="font-weight: 500;">Kontaktirajte nas</span>
+                    </div>
+                </a>
+                
+                
+                <a href="kako-kupovati.html" style="color: #ffffff; text-decoration: none;">
+                    <div style="background: linear-gradient(145deg, #495057, #343a40); 
+                                padding: 15px 25px; 
+                                border-radius: 10px; 
+                                box-shadow: 5px 5px 15px rgba(0,0,0,0.3),
+                                           -2px -2px 10px rgba(255,255,255,0.05);
+                                transition: all 0.3s ease;
+                                transform-style: preserve-3d;
+                                border: 1px solid rgba(255,255,255,0.1);"
+                         onmouseover="this.style.transform='translateY(-5px) scale(1.03)'; this.style.boxShadow='8px 8px 20px rgba(0,0,0,0.4), -3px -3px 12px rgba(255,255,255,0.08)'"
+                         onmouseout="this.style.transform=''; this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.3), -2px -2px 10px rgba(255,255,255,0.05)'">
+                        <i class="fas fa-shopping-cart" style="font-size: 1.5rem; margin-bottom: 8px; display: block; color: #20c997;"></i>
+                        <span style="font-weight: 500;">Kako kupovati</span>
+                    </div>
+                </a>
+                
+               
+                <a href="cesta-pitanja.html" style="color: #ffffff; text-decoration: none;">
+                    <div style="background: linear-gradient(145deg, #495057, #343a40); 
+                                padding: 15px 25px; 
+                                border-radius: 10px; 
+                                box-shadow: 5px 5px 15px rgba(0,0,0,0.3),
+                                           -2px -2px 10px rgba(255,255,255,0.05);
+                                transition: all 0.3s ease;
+                                transform-style: preserve-3d;
+                                border: 1px solid rgba(255,255,255,0.1);"
+                         onmouseover="this.style.transform='translateY(-5px) scale(1.03)'; this.style.boxShadow='8px 8px 20px rgba(0,0,0,0.4), -3px -3px 12px rgba(255,255,255,0.08)'"
+                         onmouseout="this.style.transform=''; this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.3), -2px -2px 10px rgba(255,255,255,0.05)'">
+                        <i class="fas fa-question-circle" style="font-size: 1.5rem; margin-bottom: 8px; display: block; color: #20c997;"></i>
+                        <span style="font-weight: 500;">Česta pitanja</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+  
+        <p style="font-size: 18px; font-weight: bold; text-align: center; padding-top: 10px;">© 2025 Dekor Company doo</p>
+        <p style="text-align: center;">Design and development by <span class="designer-name">Luka Petrović</span></p>
+        <hr style="border-color: #555; margin: 15px 0;">
+          
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+            <div style="flex: 1; min-width: 250px;">
+                <p><i class="fas fa-id-card"></i> <strong>PIB:</strong> 109621452</p>
+                <p><i class="fas fa-briefcase"></i> <strong>MB:</strong> 21212229</p>
+                <p><i class="fas fa-calendar-alt"></i> <strong>Datum osnivanja:</strong> 18.7.2016.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <p><i class="fas fa-phone-alt"></i> <strong>Telefon:</strong> +381 033 445723</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:office@dekorcompany.rs" style="color: #ffffff; text-decoration: none;">office@dekorcompany.rs</a></p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Adresa:</strong></p>
+                <p>29. Oktobra bb</p>
+                <p>31331 Priboj, Srbija</p>
+            </div>
+        </div>
+          
+        <hr style="border-color: #555; margin: 20px 0;">
+          
+        
+        <div style="text-align: center; margin: 20px auto; max-width: 800px;">
+            <p style="margin-bottom: 15px; font-weight: bold;">Prihvatamo sledeće načine plaćanja:</p>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; align-items: center;">
+                <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="creditcard/visa.png" alt="Visa" style="height: 30px; width: auto;">
+                </div>
+                <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="creditcard/logo-visa-secure.png" alt="Visa Secure" style="height: 30px; width: auto;">
+                </div>
+                <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="creditcard/mastercard.png" alt="Mastercard" style="height: 30px; width: auto;">
+                </div>
+                <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="creditcard/mastercard-id-check.png" alt="Mastercard ID Check" style="height: 30px; width: auto;">
+                </div>
+                <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="creditcard/maestro.png" alt="Maestro" style="height: 30px; width: auto;">
+                </div>
+                <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="creditcard/ips.png" alt="IPS" style="height: 30px; width: auto;">
+                </div>
+                <div style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="creditcard/dinacard.png" alt="DinaCard" style="height: 30px; width: auto;">
+                </div>
+            </div>
+        </div>
+          
+        <p style="text-align: center; margin-top: 15px;">Sva prava zadržana.</p>
+    </div>
+</footer>
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Highlight active page
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.parentElement.classList.add('active');
+      }
+    });
+    
+    // Scroll effect for navbar
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        document.querySelector('.navbar').classList.add('scrolled');
+      } else {
+        document.querySelector('.navbar').classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scroll for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+
+</section><script class="cid-uithpB1lg5" id="image3-3v" data-rv-view="1254">
+
+
+function showTab(tabId) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            if (tab.id === tabId) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        const buttons = document.querySelectorAll('.tab-button');
+        buttons.forEach(button => {
+            if (button.getAttribute('onclick').includes(tabId)) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+
+    
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    updateCart();
+
+// Pozovi funkciju za ažuriranje prikaza korpe odmah nakon učitavanja stranice
+
+
+// Toggle za korpu
+function toggleCart() {
+    let cartContainer = document.getElementById("cart-container");
+    cartContainer.style.right = cartContainer.style.right === "0px" ? "-350px" : "0px";
+}
+
+// Funkcija za ažuriranje korpe
+function updateCart() {
+    let cartItems = document.getElementById("cart-items");
+    let cartCount = document.querySelector(".cart-count");
+    let cartTotal = document.getElementById("cart-total");
+
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    if(cart.length === 0) {
+        cartItems.innerHTML = `
+            <div class="empty-cart text-center py-5">
+                <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+                <h5 class="text-muted">Vaša korpa je prazna</h5>
+                <p class="text-muted">Dodajte proizvode da počnete kupovinu</p>
+            </div>
+        `;
+    } else {
+        cart.forEach((item, index) => {
+            let itemDiv = document.createElement("div");
+            itemDiv.classList.add("cart-item");
+            total += item.price * item.quantity;
+
+            itemDiv.innerHTML = `
+                <img src="${item.imageUrl}" alt="${item.name}">
+                <div class="cart-item-details">
+                    <div class="cart-item-title">${item.name}</div>
+                    <div class="cart-item-price">${item.price} RSD</div>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                    <span class="mx-2 fw-bold">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                </div>
+                <button class="remove-item" onclick="removeFromCart(${index})">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            cartItems.appendChild(itemDiv);
+        });
+    }
+
+    cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+    cartTotal.textContent = `${total.toFixed(2)} RSD`;
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+
+// Funkcija za ažuriranje količine proizvoda u korpi
+function updateQuantity(index, change) {
+    // Proveri da li je nova količina manja od 1, ako jeste, ne dozvoljavaj to
+    if (cart[index].quantity + change <= 0) {
+        return;
+    }
+
+    // Ažuriraj količinu proizvoda u korpi
+    cart[index].quantity += change;
+    
+    // Pozovi funkciju za ažuriranje prikaza korpe
+    updateCart();
+}
+
+// Funkcija za uklanjanje proizvoda iz korpe
+function removeFromCart(index) {
+    cart.splice(index, 1); // Ukloni proizvod iz korpe
+    updateCart(); // Ažuriraj prikaz korpe
+}
+
+
+
+function addToCart(product) {
+    // Proveri da li proizvod već postoji u korpi
+    let existingProduct = cart.find(item => item.name === product.name);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;  // Povećaj količinu ako proizvod već postoji
+    } else {
+        product.quantity = 1;  // Ako ne postoji, dodaj proizvod sa količinom 1
+        cart.push(product);
+    }
+    
+    // Spremi ažuriranu korpu u localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    
+    // Ažuriraj prikaz korpe
+    updateCart();
+}
+
+
+// Funkcija za promenu količine proizvoda u korpi
+function updateQuantity(index, change) {
+    let item = cart[index];
+    item.quantity += change;
+
+    // Ako količina postane manja od 1, uklanjamo proizvod
+    if (item.quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+}
+
+// Funkcija za uklanjanje proizvoda iz korpe
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Poziva se kada korisnik pritisne "Naruči"
+function placeOrder() {
+    if (cart.length === 0) {
+        alert("Korpa je prazna!");
+        return;
+    }
+
+    window.location.href = "checkout.html"; // Preusmeravanje na checkout stranicu
+}
+
+// Početno učitavanje korpe
+updateCart();
+
+// Kada se stranica učita, ažuriraj korpu
+document.addEventListener("DOMContentLoaded", updateCart);
+
+
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 0rem;"><a href="https://mobiri.se/2762893" style="flex: 1 1;height: 0rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 0rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-builder.html"> </a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+
+
+<div id="notification-container"></div>
+<audio id="orderSound" src="assets/sounds/order.mp3" preload="auto"></audio>
+
+
+  </body>
+</html>
